@@ -12,6 +12,7 @@ import Drawer
 struct MainView: View {
     @State private var region = MKCoordinateRegion()
     @State private var mapType: MKMapType = .hybridFlyover
+    @State private var isMyFlight: Bool = false
     
     @Binding var keyword: String
     
@@ -25,26 +26,13 @@ struct MainView: View {
                         .foregroundColor(Color("SystemBackground"))
                     
                     VStack {
-                        FlightListView(keyword: $keyword)
-                        VStack {
-                            Text("어디로든 떠나봐요")
-                                .fontWeight(.semibold)
-                                .font(.title3)
-                                .padding(.bottom, 2.0)
-                            
-                            hilightedText(text: "검색 창을 이용해보세요\n 아니면 아무거나 쫓아가볼까요!", target: "아무거나 쫓아가볼까요!")
-                                .foregroundColor(Color(UIColor.systemGray))
-                                .font(.footnote)
-                                .fontWeight(.light)
-                                .lineSpacing(3)
-                                .multilineTextAlignment(.center)
-                        }
+                        FlightListView(keyword: $keyword, isMyFlight: isMyFlight)
                         Spacer()
                     }
                 }
             }
             .rest(at: .constant([250, 500]))
-            .impact(.light)
+            .impact(.medium)
             .edgesIgnoringSafeArea(.vertical)
             
         }
