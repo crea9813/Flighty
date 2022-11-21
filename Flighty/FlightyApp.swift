@@ -11,7 +11,7 @@ import SwiftUI
 struct FlightyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView(keyword: .constant(""))
         }
     }
 }

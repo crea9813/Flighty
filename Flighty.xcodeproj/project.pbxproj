@@ -11,6 +11,27 @@
 		2F2B9A3129262AC000C1C4C2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B9A3029262AC000C1C4C2 /* ContentView.swift */; };
 		2F2B9A3329262AC200C1C4C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F2B9A3229262AC200C1C4C2 /* Assets.xcassets */; };
 		2F2B9A3729262AC200C1C4C2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F2B9A3629262AC200C1C4C2 /* Preview Assets.xcassets */; };
+		2F2B9A5229262AF200C1C4C2 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B9A3E29262AF100C1C4C2 /* MapView.swift */; };
+		2F2B9A5329262AF200C1C4C2 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B9A3F29262AF100C1C4C2 /* SearchBar.swift */; };
+		2F2B9A5429262AF200C1C4C2 /* CircleIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B9A4029262AF100C1C4C2 /* CircleIconView.swift */; };
+		2F2B9A5529262AF200C1C4C2 /* FlightListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B9A4129262AF100C1C4C2 /* FlightListView.swift */; };
+		2F2B9A5629262AF200C1C4C2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B9A4229262AF100C1C4C2 /* MainView.swift */; };
+		2F2B9A5729262AF200C1C4C2 /* FlightRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B9A4429262AF100C1C4C2 /* FlightRepositoryInterface.swift */; };
+		2F2B9A5829262AF200C1C4C2 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B9A4629262AF100C1C4C2 /* Flight.swift */; };
+		2F2B9A5929262AF200C1C4C2 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B9A4729262AF100C1C4C2 /* Schedule.swift */; };
+		2F2B9A5A29262AF200C1C4C2 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B9A4829262AF100C1C4C2 /* BaseModel.swift */; };
+		2F2B9A5B29262AF200C1C4C2 /* FlightUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B9A4A29262AF100C1C4C2 /* FlightUseCase.swift */; };
+		2F2B9A5C29262AF200C1C4C2 /* FlightRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B9A4D29262AF200C1C4C2 /* FlightRepository.swift */; };
+		2F2B9A5D29262AF200C1C4C2 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B9A4F29262AF200C1C4C2 /* Networking.swift */; };
+		2F2B9A5E29262AF200C1C4C2 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B9A5029262AF200C1C4C2 /* API.swift */; };
+		2F2B9A5F29262AF200C1C4C2 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B9A5129262AF200C1C4C2 /* Constant.swift */; };
+		2F2B9A6329262BD700C1C4C2 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 2F2B9A6229262BD700C1C4C2 /* RxCocoa */; };
+		2F2B9A6529262BD700C1C4C2 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 2F2B9A6429262BD700C1C4C2 /* RxRelay */; };
+		2F2B9A6729262BD700C1C4C2 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2F2B9A6629262BD700C1C4C2 /* RxSwift */; };
+		2F2B9A6A29262BE500C1C4C2 /* Drawer in Frameworks */ = {isa = PBXBuildFile; productRef = 2F2B9A6929262BE500C1C4C2 /* Drawer */; };
+		2F2B9A6D29262C0800C1C4C2 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 2F2B9A6C29262C0800C1C4C2 /* Moya */; };
+		2F2B9A6F29262C0800C1C4C2 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 2F2B9A6E29262C0800C1C4C2 /* RxMoya */; };
+		2F2B9A7129262C3400C1C4C2 /* AnyDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B9A7029262C3400C1C4C2 /* AnyDecodable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +41,21 @@
 		2F2B9A3229262AC200C1C4C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F2B9A3429262AC200C1C4C2 /* Flighty.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Flighty.entitlements; sourceTree = "<group>"; };
 		2F2B9A3629262AC200C1C4C2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2F2B9A3E29262AF100C1C4C2 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		2F2B9A3F29262AF100C1C4C2 /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		2F2B9A4029262AF100C1C4C2 /* CircleIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleIconView.swift; sourceTree = "<group>"; };
+		2F2B9A4129262AF100C1C4C2 /* FlightListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightListView.swift; sourceTree = "<group>"; };
+		2F2B9A4229262AF100C1C4C2 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		2F2B9A4429262AF100C1C4C2 /* FlightRepositoryInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightRepositoryInterface.swift; sourceTree = "<group>"; };
+		2F2B9A4629262AF100C1C4C2 /* Flight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
+		2F2B9A4729262AF100C1C4C2 /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		2F2B9A4829262AF100C1C4C2 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		2F2B9A4A29262AF100C1C4C2 /* FlightUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightUseCase.swift; sourceTree = "<group>"; };
+		2F2B9A4D29262AF200C1C4C2 /* FlightRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightRepository.swift; sourceTree = "<group>"; };
+		2F2B9A4F29262AF200C1C4C2 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		2F2B9A5029262AF200C1C4C2 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		2F2B9A5129262AF200C1C4C2 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		2F2B9A7029262C3400C1C4C2 /* AnyDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyDecodable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +63,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F2B9A6F29262C0800C1C4C2 /* RxMoya in Frameworks */,
+				2F2B9A6729262BD700C1C4C2 /* RxSwift in Frameworks */,
+				2F2B9A6529262BD700C1C4C2 /* RxRelay in Frameworks */,
+				2F2B9A6329262BD700C1C4C2 /* RxCocoa in Frameworks */,
+				2F2B9A6D29262C0800C1C4C2 /* Moya in Frameworks */,
+				2F2B9A6A29262BE500C1C4C2 /* Drawer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,9 +94,12 @@
 		2F2B9A2D29262AC000C1C4C2 /* Flighty */ = {
 			isa = PBXGroup;
 			children = (
+				2F2B9A6029262B5C00C1C4C2 /* Supporting Files */,
+				2F2B9A4B29262AF200C1C4C2 /* Data */,
+				2F2B9A4329262AF100C1C4C2 /* Domain */,
+				2F2B9A3D29262AF100C1C4C2 /* Presentation */,
 				2F2B9A2E29262AC000C1C4C2 /* FlightyApp.swift */,
 				2F2B9A3029262AC000C1C4C2 /* ContentView.swift */,
-				2F2B9A3229262AC200C1C4C2 /* Assets.xcassets */,
 				2F2B9A3429262AC200C1C4C2 /* Flighty.entitlements */,
 				2F2B9A3529262AC200C1C4C2 /* Preview Content */,
 			);
@@ -67,6 +112,82 @@
 				2F2B9A3629262AC200C1C4C2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2F2B9A3D29262AF100C1C4C2 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				2F2B9A3E29262AF100C1C4C2 /* MapView.swift */,
+				2F2B9A3F29262AF100C1C4C2 /* SearchBar.swift */,
+				2F2B9A4029262AF100C1C4C2 /* CircleIconView.swift */,
+				2F2B9A4129262AF100C1C4C2 /* FlightListView.swift */,
+				2F2B9A4229262AF100C1C4C2 /* MainView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		2F2B9A4329262AF100C1C4C2 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				2F2B9A4429262AF100C1C4C2 /* FlightRepositoryInterface.swift */,
+				2F2B9A4529262AF100C1C4C2 /* Entity */,
+				2F2B9A4929262AF100C1C4C2 /* UseCase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		2F2B9A4529262AF100C1C4C2 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				2F2B9A4629262AF100C1C4C2 /* Flight.swift */,
+				2F2B9A4729262AF100C1C4C2 /* Schedule.swift */,
+				2F2B9A4829262AF100C1C4C2 /* BaseModel.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		2F2B9A4929262AF100C1C4C2 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				2F2B9A4A29262AF100C1C4C2 /* FlightUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		2F2B9A4B29262AF200C1C4C2 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2F2B9A4C29262AF200C1C4C2 /* Repository */,
+				2F2B9A4E29262AF200C1C4C2 /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		2F2B9A4C29262AF200C1C4C2 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				2F2B9A4D29262AF200C1C4C2 /* FlightRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		2F2B9A4E29262AF200C1C4C2 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2F2B9A4F29262AF200C1C4C2 /* Networking.swift */,
+				2F2B9A5029262AF200C1C4C2 /* API.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		2F2B9A6029262B5C00C1C4C2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2F2B9A3229262AC200C1C4C2 /* Assets.xcassets */,
+				2F2B9A5129262AF200C1C4C2 /* Constant.swift */,
+				2F2B9A7029262C3400C1C4C2 /* AnyDecodable.swift */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +206,14 @@
 			dependencies = (
 			);
 			name = Flighty;
+			packageProductDependencies = (
+				2F2B9A6229262BD700C1C4C2 /* RxCocoa */,
+				2F2B9A6429262BD700C1C4C2 /* RxRelay */,
+				2F2B9A6629262BD700C1C4C2 /* RxSwift */,
+				2F2B9A6929262BE500C1C4C2 /* Drawer */,
+				2F2B9A6C29262C0800C1C4C2 /* Moya */,
+				2F2B9A6E29262C0800C1C4C2 /* RxMoya */,
+			);
 			productName = Flighty;
 			productReference = 2F2B9A2B29262AC000C1C4C2 /* Flighty.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +242,11 @@
 				Base,
 			);
 			mainGroup = 2F2B9A2229262AC000C1C4C2;
+			packageReferences = (
+				2F2B9A6129262BD700C1C4C2 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				2F2B9A6829262BE500C1C4C2 /* XCRemoteSwiftPackageReference "swiftui-drawer" */,
+				2F2B9A6B29262C0800C1C4C2 /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			productRefGroup = 2F2B9A2C29262AC000C1C4C2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,8 +273,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F2B9A5829262AF200C1C4C2 /* Flight.swift in Sources */,
+				2F2B9A5429262AF200C1C4C2 /* CircleIconView.swift in Sources */,
+				2F2B9A5A29262AF200C1C4C2 /* BaseModel.swift in Sources */,
+				2F2B9A5F29262AF200C1C4C2 /* Constant.swift in Sources */,
+				2F2B9A5729262AF200C1C4C2 /* FlightRepositoryInterface.swift in Sources */,
+				2F2B9A5E29262AF200C1C4C2 /* API.swift in Sources */,
+				2F2B9A5629262AF200C1C4C2 /* MainView.swift in Sources */,
+				2F2B9A5B29262AF200C1C4C2 /* FlightUseCase.swift in Sources */,
 				2F2B9A3129262AC000C1C4C2 /* ContentView.swift in Sources */,
+				2F2B9A5529262AF200C1C4C2 /* FlightListView.swift in Sources */,
+				2F2B9A5329262AF200C1C4C2 /* SearchBar.swift in Sources */,
+				2F2B9A5C29262AF200C1C4C2 /* FlightRepository.swift in Sources */,
+				2F2B9A5229262AF200C1C4C2 /* MapView.swift in Sources */,
+				2F2B9A7129262C3400C1C4C2 /* AnyDecodable.swift in Sources */,
+				2F2B9A5929262AF200C1C4C2 /* Schedule.swift in Sources */,
 				2F2B9A2F29262AC000C1C4C2 /* FlightyApp.swift in Sources */,
+				2F2B9A5D29262AF200C1C4C2 /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +418,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "추적추적";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -279,7 +429,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
@@ -307,6 +457,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "추적추적";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -317,7 +468,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
@@ -354,6 +505,66 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2F2B9A6129262BD700C1C4C2 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		2F2B9A6829262BE500C1C4C2 /* XCRemoteSwiftPackageReference "swiftui-drawer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maustinstar/swiftui-drawer";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		2F2B9A6B29262C0800C1C4C2 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2F2B9A6229262BD700C1C4C2 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F2B9A6129262BD700C1C4C2 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		2F2B9A6429262BD700C1C4C2 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F2B9A6129262BD700C1C4C2 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		2F2B9A6629262BD700C1C4C2 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F2B9A6129262BD700C1C4C2 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		2F2B9A6929262BE500C1C4C2 /* Drawer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F2B9A6829262BE500C1C4C2 /* XCRemoteSwiftPackageReference "swiftui-drawer" */;
+			productName = Drawer;
+		};
+		2F2B9A6C29262C0800C1C4C2 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F2B9A6B29262C0800C1C4C2 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		2F2B9A6E29262C0800C1C4C2 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F2B9A6B29262C0800C1C4C2 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2F2B9A2329262AC000C1C4C2 /* Project object */;
 }
