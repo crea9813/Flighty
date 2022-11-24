@@ -5,10 +5,11 @@
 //  Created by SuperMove on 2022/11/16.
 //
 
-import Foundation
-import RxSwift
-import RxMoya
+
 import Moya
+import Combine
+import CombineMoya
+import Foundation
 
 final class Networking<Target: TargetType>: MoyaProvider<Target> {
     
@@ -25,59 +26,37 @@ final class Networking<Target: TargetType>: MoyaProvider<Target> {
         file: StaticString = #file,
         function: StaticString = #function,
         line: UInt = #line
-    ) -> Single<Response> {
+    ) -> AnyPublisher<Response, Error> {
         let requestString = "\(target.method.rawValue) \(target.path)"
         
-        return self.rx.request(target)
-            .filterSuccessfulStatusCodes()
-            .do {
-                print(String(data: $0.data, encoding: .utf8))
-            }
-            .do(
-                onSuccess: { value in
-                    let message = "SUCCESS: \(requestString) (\(value.statusCode))"
-                    print(message)
+        return self.requestPublisher(target)
+            .mapCustomError()
+            .handleEvents(
+                receiveOutput: { output in
+                    print()
                 },
-                onError: { error in
-                    if let response = (error as? MoyaError)?.response {
-                        if let jsonObject = try? response.mapJSON(failsOnEmptyData: false) {
-                            let message = "FAILURE: \(requestString) (\(response.statusCode))\n\(jsonObject)"
-                            print(message)
-                        } else if let rawString = String(data: response.data, encoding: .utf8) {
-                            let message = "FAILURE: \(requestString) (\(response.statusCode))\n\(rawString)"
-                            print(message)
-                        } else {
-                            let message = "FAILURE: \(requestString) (\(response.statusCode))"
-                            print(message)
-                        }
-                    } else {
-                        let message = "FAILURE: \(requestString)\n\(error)"
-                        print(message)
-                    }
-                },
-                onSubscribed: {
-                    let message = "REQUEST: \(requestString)"
-                    print(message)
-                }
-            )
+                receiveRequest: {_ in
+                     print()
+                 }
+            ).eraseToAnyPublisher()
     }
 }
 
-extension PrimitiveSequence where Trait == SingleTrait, Element == Response {
-    func filterSuccessfulRequest() -> Single<Element> {
-        return flatMap { response in
+extension AnyPublisher where Output == Response, Failure == MoyaError {
+    func mapCustomError() -> AnyPublisher<Response, Error> {
+        return self.tryMap { response -> Response in
             do {
                 let decoded = try JSONDecoder().decode(BaseModel<AnyDecodable>.self, from: response.data)
                 
-                if let error = decoded.error {
-                    throw error
-                }
+                if let error = decoded.error { throw error }
                 
-                return .just(response)
+                throw Error(message: "Unknown Error", code: "unknown_error")
+                
             } catch {
                 let decodingError = Error(message: "Decoding Failed", code: "decoding_error")
                 throw decodingError
             }
-        }
+        }.mapError({ $0 as? Error ?? Error(message: "Unknown Error", code: "unknown_error")})
+            .eraseToAnyPublisher()
     }
 }
