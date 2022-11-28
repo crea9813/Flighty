@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F0D80EE292F54DB00EF537B /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 2F0D80ED292F54DB00EF537B /* CombineMoya */; };
 		2F2B9A2F29262AC000C1C4C2 /* FlightyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B9A2E29262AC000C1C4C2 /* FlightyApp.swift */; };
 		2F2B9A3129262AC000C1C4C2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B9A3029262AC000C1C4C2 /* ContentView.swift */; };
 		2F2B9A3329262AC200C1C4C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F2B9A3229262AC200C1C4C2 /* Assets.xcassets */; };
@@ -25,12 +26,7 @@
 		2F2B9A5D29262AF200C1C4C2 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B9A4F29262AF200C1C4C2 /* Networking.swift */; };
 		2F2B9A5E29262AF200C1C4C2 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B9A5029262AF200C1C4C2 /* API.swift */; };
 		2F2B9A5F29262AF200C1C4C2 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B9A5129262AF200C1C4C2 /* Constant.swift */; };
-		2F2B9A6329262BD700C1C4C2 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 2F2B9A6229262BD700C1C4C2 /* RxCocoa */; };
-		2F2B9A6529262BD700C1C4C2 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 2F2B9A6429262BD700C1C4C2 /* RxRelay */; };
-		2F2B9A6729262BD700C1C4C2 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2F2B9A6629262BD700C1C4C2 /* RxSwift */; };
 		2F2B9A6A29262BE500C1C4C2 /* Drawer in Frameworks */ = {isa = PBXBuildFile; productRef = 2F2B9A6929262BE500C1C4C2 /* Drawer */; };
-		2F2B9A6D29262C0800C1C4C2 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 2F2B9A6C29262C0800C1C4C2 /* Moya */; };
-		2F2B9A6F29262C0800C1C4C2 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 2F2B9A6E29262C0800C1C4C2 /* RxMoya */; };
 		2F2B9A7129262C3400C1C4C2 /* AnyDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B9A7029262C3400C1C4C2 /* AnyDecodable.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,11 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F2B9A6F29262C0800C1C4C2 /* RxMoya in Frameworks */,
-				2F2B9A6729262BD700C1C4C2 /* RxSwift in Frameworks */,
-				2F2B9A6529262BD700C1C4C2 /* RxRelay in Frameworks */,
-				2F2B9A6329262BD700C1C4C2 /* RxCocoa in Frameworks */,
-				2F2B9A6D29262C0800C1C4C2 /* Moya in Frameworks */,
+				2F0D80EE292F54DB00EF537B /* CombineMoya in Frameworks */,
 				2F2B9A6A29262BE500C1C4C2 /* Drawer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,12 +199,8 @@
 			);
 			name = Flighty;
 			packageProductDependencies = (
-				2F2B9A6229262BD700C1C4C2 /* RxCocoa */,
-				2F2B9A6429262BD700C1C4C2 /* RxRelay */,
-				2F2B9A6629262BD700C1C4C2 /* RxSwift */,
 				2F2B9A6929262BE500C1C4C2 /* Drawer */,
-				2F2B9A6C29262C0800C1C4C2 /* Moya */,
-				2F2B9A6E29262C0800C1C4C2 /* RxMoya */,
+				2F0D80ED292F54DB00EF537B /* CombineMoya */,
 			);
 			productName = Flighty;
 			productReference = 2F2B9A2B29262AC000C1C4C2 /* Flighty.app */;
@@ -243,9 +231,8 @@
 			);
 			mainGroup = 2F2B9A2229262AC000C1C4C2;
 			packageReferences = (
-				2F2B9A6129262BD700C1C4C2 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				2F2B9A6829262BE500C1C4C2 /* XCRemoteSwiftPackageReference "swiftui-drawer" */,
-				2F2B9A6B29262C0800C1C4C2 /* XCRemoteSwiftPackageReference "Moya" */,
+				2F0D80EC292F54DB00EF537B /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 2F2B9A2C29262AC000C1C4C2 /* Products */;
 			projectDirPath = "";
@@ -507,11 +494,11 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2F2B9A6129262BD700C1C4C2 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+		2F0D80EC292F54DB00EF537B /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			repositoryURL = "https://github.com/Moya/Moya";
 			requirement = {
-				branch = main;
+				branch = master;
 				kind = branch;
 			};
 		};
@@ -523,46 +510,18 @@
 				kind = branch;
 			};
 		};
-		2F2B9A6B29262C0800C1C4C2 /* XCRemoteSwiftPackageReference "Moya" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Moya/Moya";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2F2B9A6229262BD700C1C4C2 /* RxCocoa */ = {
+		2F0D80ED292F54DB00EF537B /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2F2B9A6129262BD700C1C4C2 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		2F2B9A6429262BD700C1C4C2 /* RxRelay */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2F2B9A6129262BD700C1C4C2 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxRelay;
-		};
-		2F2B9A6629262BD700C1C4C2 /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2F2B9A6129262BD700C1C4C2 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
+			package = 2F0D80EC292F54DB00EF537B /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
 		};
 		2F2B9A6929262BE500C1C4C2 /* Drawer */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2F2B9A6829262BE500C1C4C2 /* XCRemoteSwiftPackageReference "swiftui-drawer" */;
 			productName = Drawer;
-		};
-		2F2B9A6C29262C0800C1C4C2 /* Moya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2F2B9A6B29262C0800C1C4C2 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = Moya;
-		};
-		2F2B9A6E29262C0800C1C4C2 /* RxMoya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2F2B9A6B29262C0800C1C4C2 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = RxMoya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

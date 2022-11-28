@@ -60,3 +60,25 @@ extension AnyPublisher where Output == Response, Failure == MoyaError {
             .eraseToAnyPublisher()
     }
 }
+
+extension AnyPublisher where Output == Response, Failure == Error {
+    func map<D: Decodable>(_ type: D.Type, atKeyPath keyPath: String? = nil, using decoder: JSONDecoder = JSONDecoder(), failsOnEmptyData: Bool = true) -> AnyPublisher<D, Error> {
+        return unwrapThrowable { response in
+            try response.map(type, atKeyPath: keyPath, using: decoder, failsOnEmptyData: failsOnEmptyData)
+        }
+    }
+    
+    private func unwrapThrowable<T>(throwable: @escaping (Output) throws -> T) -> AnyPublisher<T, Error> {
+        self.tryMap { element in
+            try throwable(element)
+        }
+        .mapError { error -> Error in
+            if let error = error as? Error {
+                return error
+            } else {
+                return Error(message: "Unknown Error", code: "unknown_error")
+            }
+        }
+        .eraseToAnyPublisher()
+    }
+}

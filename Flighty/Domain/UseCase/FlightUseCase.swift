@@ -5,10 +5,10 @@
 //  Created by SuperMove on 2022/11/16.
 //
 
-import RxSwift
+import Combine
 
 protocol FlightUseCaseProtocol {
-    func flights() -> Single<[Flight]>
+    func flights() -> AnyPublisher<Flights, Error>
 }
 
 final class FlightUseCase: FlightUseCaseProtocol {
@@ -19,7 +19,7 @@ final class FlightUseCase: FlightUseCaseProtocol {
         self.repository = repository
     }
     
-    func flights() -> Single<[Flight]> {
+    func flights() -> AnyPublisher<Flights, Error> {
         return repository.getFlights()
     }
 }

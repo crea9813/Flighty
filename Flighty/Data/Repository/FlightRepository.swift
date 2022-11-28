@@ -5,7 +5,8 @@
 //  Created by SuperMove on 2022/11/16.
 //
 
-import RxSwift
+import Foundation
+import Combine
 
 final class FlightRepository: FlightRepositoryInterface {
     
@@ -15,9 +16,10 @@ final class FlightRepository: FlightRepositoryInterface {
         self.service = service
     }
     
-    func getFlights() -> Single<[Flight]> {
+    func getFlights() -> AnyPublisher<Flights, Error> {
         return service.request(.flights)
-            .map(BaseModel<[Flight]>.self)
-            .map { $0.response ?? [] }
+            .map(BaseModel<Flights>.self)
+            .map { $0.response! }
+            .eraseToAnyPublisher()
     }
 }

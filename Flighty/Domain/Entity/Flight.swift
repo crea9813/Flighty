@@ -7,6 +7,8 @@
 
 import Foundation
 
+typealias Flights = [Flight]
+
 struct Flight: Codable {
     let hex: String
     let regNumber, flag: String?

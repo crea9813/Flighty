@@ -5,8 +5,9 @@
 //  Created by SuperMove on 2022/11/16.
 //
 
-import RxSwift
+import Combine
 
 protocol FlightRepositoryInterface {
-    func getFlights() -> Single<[Flight]>
+    func getFlights() -> AnyPublisher<Flights, Error>
 }
+

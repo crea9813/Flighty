@@ -37,20 +37,6 @@ struct MainView: View {
             
         }
     }
-    
-    func hilightedText(text: String, target: String) -> Text {
-        guard !text.isEmpty && !target.isEmpty else { return Text(text) }
-        
-        var result: Text!
-        let parts = text.components(separatedBy: target)
-        for i in parts.indices {
-            result = (result == nil ? Text(parts[i]) : result + Text(parts[i]))
-            if i != parts.count - 1 {
-                result = result + Text(target).foregroundColor(.blue)
-            }
-        }
-        return result ?? Text(text)
-    }
 }
 
 struct MainView_Previews: PreviewProvider {
