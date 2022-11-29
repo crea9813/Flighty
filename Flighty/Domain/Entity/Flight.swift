@@ -7,9 +7,9 @@
 
 import Foundation
 
-typealias Flights = [Flight]
+public typealias Flights = [Flight]
 
-struct Flight: Codable {
+public struct Flight: Codable {
     let hex: String
     let regNumber, flag: String?
     let lat, lng: Double

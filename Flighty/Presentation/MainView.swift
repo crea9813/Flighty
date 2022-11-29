@@ -14,34 +14,15 @@ struct MainView: View {
     @State private var mapType: MKMapType = .hybridFlyover
     @State private var isMyFlight: Bool = false
     
-    @Binding var keyword: String
+    @ObservedObject public var viewModel: MainViewModel
     
     var body: some View {
         ZStack {
             MapView(region: region, mapType: mapType).ignoresSafeArea(.all)
             
-            Drawer {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 12)
-                        .foregroundColor(Color("SystemBackground"))
-                    
-                    VStack {
-                        FlightListView(keyword: $keyword, isMyFlight: isMyFlight)
-                        Spacer()
-                    }
-                }
-            }
-            .rest(at: .constant([250, 500]))
-            .impact(.medium)
-            .edgesIgnoringSafeArea(.vertical)
-            
+            FlightListView(keyword: $viewModel.searchText,
+                           viewState: $viewModel.viewState)
         }
-    }
-}
-
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView(keyword: .constant(""))
     }
 }
 

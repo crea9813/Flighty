@@ -9,7 +9,9 @@ import Combine
 
 protocol FlightUseCaseProtocol {
     func flights() -> AnyPublisher<Flights, Error>
+    func flight(_ flightID: String) -> AnyPublisher<Flight, Error>
 }
+
 
 final class FlightUseCase: FlightUseCaseProtocol {
     
@@ -21,5 +23,9 @@ final class FlightUseCase: FlightUseCaseProtocol {
     
     func flights() -> AnyPublisher<Flights, Error> {
         return repository.getFlights()
+    }
+    
+    func flight(_ flightID: String) -> AnyPublisher<Flight, Error> {
+        return repository.getFlight(flightID)
     }
 }

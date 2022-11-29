@@ -9,7 +9,7 @@ import Foundation
 import Moya
 
 enum API {
-    case flights
+    case flights(_ param: FlightRequestModel? = nil)
     case schedules(param: ScheduleRequestModel)
 }
 
@@ -31,7 +31,8 @@ extension API: TargetType {
     
     var task: Moya.Task {
         switch self {
-        case .flights: return .requestPlain
+        case let .flights(param):
+            return param == nil ? .requestPlain : .requestParameters(parameters: try! param!.asDictionary(), encoding: URLEncoding.default)
         case let .schedules(param):
             return .requestParameters(parameters: try! param.asDictionary(), encoding: URLEncoding.default)
         }

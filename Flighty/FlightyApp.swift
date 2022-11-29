@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct FlightyApp: App {
+    
     var body: some Scene {
         WindowGroup {
-            MainView(keyword: .constant(""))
+            MainView(viewModel: MainViewModel(FlightUseCase(repository: FlightRepository(service: Networking<API>())), userCollection: UserCollection()))
         }
     }
 }
