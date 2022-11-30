@@ -32,6 +32,12 @@
 		2F6F6E1E29359D9200013745 /* UserCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F6E1D29359D9200013745 /* UserCollection.swift */; };
 		2F6F6E202935CC2300013745 /* FlightRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F6E1F2935CC2300013745 /* FlightRequestModel.swift */; };
 		2F6F6E262935FCEF00013745 /* AirportAndAirlineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F6E252935FCEF00013745 /* AirportAndAirlineCell.swift */; };
+		2F6F6E2A2936E01C00013745 /* FlightSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F6E292936E01C00013745 /* FlightSearchView.swift */; };
+		2F6F6E2C2936E14800013745 /* Airline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F6E2B2936E14800013745 /* Airline.swift */; };
+		2F6F6E2E2936E1AF00013745 /* Airport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F6E2D2936E1AF00013745 /* Airport.swift */; };
+		2F6F6E302936E7E200013745 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F6E2F2936E7E200013745 /* Country.swift */; };
+		2F6F6E322936EBFC00013745 /* MockedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F6E312936EBFC00013745 /* MockedData.swift */; };
+		2F6F6E342936F11900013745 /* FlightSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F6E332936F11900013745 /* FlightSearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +66,12 @@
 		2F6F6E1D29359D9200013745 /* UserCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollection.swift; sourceTree = "<group>"; };
 		2F6F6E1F2935CC2300013745 /* FlightRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightRequestModel.swift; sourceTree = "<group>"; };
 		2F6F6E252935FCEF00013745 /* AirportAndAirlineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportAndAirlineCell.swift; sourceTree = "<group>"; };
+		2F6F6E292936E01C00013745 /* FlightSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchView.swift; sourceTree = "<group>"; };
+		2F6F6E2B2936E14800013745 /* Airline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airline.swift; sourceTree = "<group>"; };
+		2F6F6E2D2936E1AF00013745 /* Airport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airport.swift; sourceTree = "<group>"; };
+		2F6F6E2F2936E7E200013745 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		2F6F6E312936EBFC00013745 /* MockedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedData.swift; sourceTree = "<group>"; };
+		2F6F6E332936F11900013745 /* FlightSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +133,8 @@
 				2F2B9A3F29262AF100C1C4C2 /* SearchBar.swift */,
 				2F2B9A4029262AF100C1C4C2 /* CircleIconView.swift */,
 				2F2B9A4129262AF100C1C4C2 /* FlightListView.swift */,
+				2F6F6E292936E01C00013745 /* FlightSearchView.swift */,
+				2F6F6E332936F11900013745 /* FlightSearchViewModel.swift */,
 				2F6F6E252935FCEF00013745 /* AirportAndAirlineCell.swift */,
 				2F2B9A4229262AF100C1C4C2 /* MainView.swift */,
 				2F0D80EF29344D9E00EF537B /* MainViewModel.swift */,
@@ -144,6 +158,9 @@
 				2F2B9A4629262AF100C1C4C2 /* Flight.swift */,
 				2F2B9A4729262AF100C1C4C2 /* Schedule.swift */,
 				2F2B9A4829262AF100C1C4C2 /* BaseModel.swift */,
+				2F6F6E2B2936E14800013745 /* Airline.swift */,
+				2F6F6E2D2936E1AF00013745 /* Airport.swift */,
+				2F6F6E312936EBFC00013745 /* MockedData.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -190,6 +207,7 @@
 				2F2B9A5129262AF200C1C4C2 /* Constant.swift */,
 				2F2B9A7029262C3400C1C4C2 /* AnyDecodable.swift */,
 				2F6F6E1D29359D9200013745 /* UserCollection.swift */,
+				2F6F6E2F2936E7E200013745 /* Country.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -276,16 +294,22 @@
 				2F6F6E262935FCEF00013745 /* AirportAndAirlineCell.swift in Sources */,
 				2F2B9A5429262AF200C1C4C2 /* CircleIconView.swift in Sources */,
 				2F2B9A5A29262AF200C1C4C2 /* BaseModel.swift in Sources */,
+				2F6F6E322936EBFC00013745 /* MockedData.swift in Sources */,
+				2F6F6E2A2936E01C00013745 /* FlightSearchView.swift in Sources */,
 				2F2B9A5F29262AF200C1C4C2 /* Constant.swift in Sources */,
 				2F2B9A5729262AF200C1C4C2 /* FlightRepositoryInterface.swift in Sources */,
 				2F6F6E1E29359D9200013745 /* UserCollection.swift in Sources */,
+				2F6F6E302936E7E200013745 /* Country.swift in Sources */,
 				2F2B9A5E29262AF200C1C4C2 /* API.swift in Sources */,
+				2F6F6E342936F11900013745 /* FlightSearchViewModel.swift in Sources */,
+				2F6F6E2E2936E1AF00013745 /* Airport.swift in Sources */,
 				2F2B9A5629262AF200C1C4C2 /* MainView.swift in Sources */,
 				2F2B9A5B29262AF200C1C4C2 /* FlightUseCase.swift in Sources */,
 				2F2B9A3129262AC000C1C4C2 /* ContentView.swift in Sources */,
 				2F2B9A5529262AF200C1C4C2 /* FlightListView.swift in Sources */,
 				2F2B9A5329262AF200C1C4C2 /* SearchBar.swift in Sources */,
 				2F2B9A5C29262AF200C1C4C2 /* FlightRepository.swift in Sources */,
+				2F6F6E2C2936E14800013745 /* Airline.swift in Sources */,
 				2F2B9A5229262AF200C1C4C2 /* MapView.swift in Sources */,
 				2F2B9A7129262C3400C1C4C2 /* AnyDecodable.swift in Sources */,
 				2F6F6E202935CC2300013745 /* FlightRequestModel.swift in Sources */,

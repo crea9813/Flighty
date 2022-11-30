@@ -11,6 +11,8 @@ import Moya
 enum API {
     case flights(_ param: FlightRequestModel? = nil)
     case schedules(param: ScheduleRequestModel)
+    case airports
+    case airlines
 }
 
 extension API: TargetType {
@@ -22,6 +24,8 @@ extension API: TargetType {
         switch self {
         case .flights: return "flights"
         case .schedules: return "schedules"
+        case .airports: return "airports"
+        case .airlines: return "airlines"
         }
     }
     
@@ -35,13 +39,13 @@ extension API: TargetType {
             return param == nil ? .requestPlain : .requestParameters(parameters: try! param!.asDictionary(), encoding: URLEncoding.default)
         case let .schedules(param):
             return .requestParameters(parameters: try! param.asDictionary(), encoding: URLEncoding.default)
+        case .airports: return .requestParameters(parameters: ["api_key" : Constant.API_KEY], encoding: URLEncoding.default)
+        case .airlines: return .requestParameters(parameters: ["api_key" : Constant.API_KEY], encoding: URLEncoding.default)
         }
     }
     
     var headers: [String : String]? {
-        return [
-            :
-        ]
+        return [:]
     }
 }
 

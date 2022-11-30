@@ -29,4 +29,18 @@ final class FlightRepository: FlightRepositoryInterface {
             .map { $0.response!.first! }
             .eraseToAnyPublisher()
     }
+    
+    func getAirports() -> AnyPublisher<Airports, Error> {
+        return service.request(.airports)
+            .map(BaseModel<Airports>.self)
+            .map { $0.response ?? [] }
+            .eraseToAnyPublisher()
+    }
+    
+    func getAirlines() -> AnyPublisher<Airlines, Error> {
+        return service.request(.airlines)
+            .map(BaseModel<Airlines>.self)
+            .map { $0.response ?? [] }
+            .eraseToAnyPublisher()
+    }
 }

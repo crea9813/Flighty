@@ -10,5 +10,7 @@ import Combine
 protocol FlightRepositoryInterface {
     func getFlights() -> AnyPublisher<Flights, Error>
     func getFlight(_ flightID: String) -> AnyPublisher<Flight, Error>
+    func getAirports() -> AnyPublisher<Airports, Error>
+    func getAirlines() -> AnyPublisher<Airlines, Error>
 }
 
