@@ -8,6 +8,6 @@
 import Foundation
 
 public class Constant: NSObject {
-    static let API_URL = URL(string: "https://airlabs.co/api/v9/ping/")!
-    static let API_KEY = "f0354222-b9c0-4b70-b815-cd6cd70f4143"
+    static let API_URL = URL(string: "https://airlabs.co/api/v9/")!
+    static let API_KEY = "7052e0e0-26bf-4011-b39f-6694e73df487"
 }

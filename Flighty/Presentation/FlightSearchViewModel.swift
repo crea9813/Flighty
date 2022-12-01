@@ -34,38 +34,21 @@ final class FlightSearchViewModel: ObservableObject {
             .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)
             .removeDuplicates()
             .filter { !$0.isEmpty }
-            .map(searchAirportAndAirline(_:))
+            .map { [unowned self] in return self.useCase.search($0) }
+            .switchToLatest()
             .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
             .sink { completion in
                 switch completion {
                 case .finished:
                     break
-                case .failure(_):
+                case .failure(let error):
+                    print("\(error.code): \(error.message)")
                     self.results = []
                 }
             } receiveValue: { items in
+                print(items)
                 self.results = items
             }.store(in: &bag)
-            
-            
-        
-    }
-    
-    func searchAirportAndAirline(_ query: String) -> AnyPublisher<[AirportAndAirline], Error> {
-        
-        let airports = self.useCase.airports()
-            .map { airports -> [AirportAndAirline] in
-                return airports.map { AirportAndAirline(iataCode: $0.iataCode, icaoCode: $0.icaoCode, name: $0.name) }
-            }
-            .eraseToAnyPublisher()
-        
-        let airlines = self.useCase.airlines()
-            .map { airlines -> [AirportAndAirline] in
-                return airlines.map { AirportAndAirline(iataCode: $0.iataCode, icaoCode: $0.icaoCode, name: $0.name) }
-            }
-            .eraseToAnyPublisher()
-        
-        return airports.merge(with: airlines).eraseToAnyPublisher()
-        
     }
 }

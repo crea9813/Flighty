@@ -33,10 +33,10 @@ final class Networking<Target: TargetType>: MoyaProvider<Target> {
             .mapCustomError()
             .handleEvents(
                 receiveOutput: { output in
-                    print()
+                    print("SUCCESS: \(requestString)")
                 },
                 receiveRequest: {_ in
-                     print()
+                     print("REQUEST: \(requestString)")
                  }
             ).eraseToAnyPublisher()
     }
@@ -50,8 +50,7 @@ extension AnyPublisher where Output == Response, Failure == MoyaError {
                 
                 if let error = decoded.error { throw error }
                 
-                throw Error(message: "Unknown Error", code: "unknown_error")
-                
+                return response
             } catch {
                 let decodingError = Error(message: "Decoding Failed", code: "decoding_error")
                 throw decodingError

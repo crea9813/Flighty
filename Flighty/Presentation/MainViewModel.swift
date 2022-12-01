@@ -20,7 +20,7 @@ final class MainViewModel: ObservableObject {
     @Published public var searchText = ""
     @Published public var isMyFlight = false
     @Published public var isLoading = false
-    @Published public var viewState: FlightViewState = .my
+    @Published public var viewState: FlightViewState = .search
     
     @Published public var flights: Flights = []
     

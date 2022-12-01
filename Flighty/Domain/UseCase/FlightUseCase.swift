@@ -10,8 +10,7 @@ import Combine
 protocol FlightUseCaseProtocol {
     func flights() -> AnyPublisher<Flights, Error>
     func flight(_ flightID: String) -> AnyPublisher<Flight, Error>
-    func airports() -> AnyPublisher<Airports, Error>
-    func airlines() -> AnyPublisher<Airlines, Error>
+    func search(_ query: String) -> AnyPublisher<[AirportAndAirline], Error>
 }
 
 
@@ -31,11 +30,18 @@ final class FlightUseCase: FlightUseCaseProtocol {
         return repository.getFlight(flightID)
     }
     
-    func airports() -> AnyPublisher<Airports, Error> {
-        return repository.getAirports()
+    func search(_ query: String) -> AnyPublisher<[AirportAndAirline], Error> {
+        let airports = repository.getAirports()
+            .map { airports -> [AirportAndAirline] in
+                return airports.map { AirportAndAirline(iataCode: $0.iataCode, icaoCode: $0.icaoCode, name: $0.name) }
+            }
+            
+        let airlines = repository.getAirlines()
+            .map { airlines -> [AirportAndAirline] in
+                return airlines.map { AirportAndAirline(iataCode: $0.iataCode, icaoCode: $0.icaoCode, name: $0.name) }
+            }
+            
+        return airports.merge(with: airlines).eraseToAnyPublisher()
     }
-    
-    func airlines() -> AnyPublisher<Airlines, Error> {
-        return repository.getAirlines()
-    }
+
 }

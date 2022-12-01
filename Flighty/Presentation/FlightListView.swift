@@ -74,39 +74,44 @@ struct FlightListView: View {
                                 }.frame(width: 28, height: 28)
                             }
                         }
-                        SearchBar(keyword: $keyword)
-                        VStack {
-                            switch viewState {
-                            case .my:
-                                Text("어디로든 떠나봐요")
-                                    .fontWeight(.semibold)
-                                    .font(.title3)
-                                    .padding(.bottom, 2.0)
-                                
-                                hilightedText(text: "검색 창을 이용해보세요\n 아니면 아무거나 쫓아가볼까요!", target: "아무거나 쫓아가볼까요!")
-                                    .foregroundColor(Color(UIColor.systemGray))
-                                    .font(.footnote)
-                                    .fontWeight(.light)
-                                    .lineSpacing(3)
-                                    .multilineTextAlignment(.center)
-                            case .others:
-                                Text("다른 사람의 여행을 추가해봐요")
-                                    .fontWeight(.semibold)
-                                    .font(.title3)
-                                    .padding(.bottom, 2.0)
-                                
-                                Text("친구나 사랑하는 사람, 중요한 사람에게\n 제때 도착할 수 있게 계속 쫓아가 볼까요!")
-                                    .foregroundColor(Color(UIColor.systemGray))
-                                    .font(.footnote)
-                                    .fontWeight(.light)
-                                    .lineSpacing(3)
-                                    .multilineTextAlignment(.center)
-                            case .search:
-                                Text("")
+                        
+                        if viewState != .search {
+                            SearchBar(keyword: $keyword)
+                            VStack {
+                                switch viewState {
+                                case .my:
+                                    Text("어디로든 떠나봐요")
+                                        .fontWeight(.semibold)
+                                        .font(.title3)
+                                        .padding(.bottom, 2.0)
+                                    
+                                    hilightedText(text: "검색 창을 이용해보세요\n 아니면 아무거나 쫓아가볼까요!", target: "아무거나 쫓아가볼까요!")
+                                        .foregroundColor(Color(UIColor.systemGray))
+                                        .font(.footnote)
+                                        .fontWeight(.light)
+                                        .lineSpacing(3)
+                                        .multilineTextAlignment(.center)
+                                case .others:
+                                    Text("다른 사람의 여행을 추가해봐요")
+                                        .fontWeight(.semibold)
+                                        .font(.title3)
+                                        .padding(.bottom, 2.0)
+                                    
+                                    Text("친구나 사랑하는 사람, 중요한 사람에게\n 제때 도착할 수 있게 계속 쫓아가 볼까요!")
+                                        .foregroundColor(Color(UIColor.systemGray))
+                                        .font(.footnote)
+                                        .fontWeight(.light)
+                                        .lineSpacing(3)
+                                        .multilineTextAlignment(.center)
+                                case .search:
+                                    Text("")
+                                }
                             }
+                            .padding()
+                            .animation(.easeInOut(duration: 0.2))
+                        } else {
+                            FlightSearchView()
                         }
-                        .padding()
-                        .animation(.easeInOut(duration: 0.2))
                     }).padding()
                     Spacer()
                 }
