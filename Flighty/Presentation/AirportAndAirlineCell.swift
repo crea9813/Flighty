@@ -22,15 +22,22 @@ struct AirportAndAirlineCell: View {
     var body: some View {
         VStack {
             HStack {
-                Text("🇰🇷").font(.title)
+                Text("🇰🇷").font(.title2)
                 VStack(alignment: .leading) {
                     Text(airportAndAirline.name)
+                        .font(.headline)
+                        .foregroundColor(Color("SystemGray2"))
                     Text("\(airportAndAirline.iataCode) · \(airportAndAirline.icaoCode) · 서울")
+                        .font(Font.caption)
+                        .foregroundColor(Color("SystemGray2"))
+                    
                 }
             }
+            .padding(.vertical, 8)
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: 50, alignment: .leading)
+        .background(Color("SystemBackground"))
     }
 }
 

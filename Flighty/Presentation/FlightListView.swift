@@ -73,7 +73,7 @@ struct FlightListView: View {
                                         .foregroundColor(.primary)
                                 }.frame(width: 28, height: 28)
                             }
-                        }
+                        }.padding()
                         
                         if viewState != .search {
                             SearchBar(keyword: $keyword)
@@ -112,7 +112,7 @@ struct FlightListView: View {
                         } else {
                             FlightSearchView()
                         }
-                    }).padding()
+                    })
                     Spacer()
                 }
             }
@@ -124,6 +124,19 @@ struct FlightListView: View {
         
     }
     
+    
+}
+
+struct FlightListView_Preview: PreviewProvider {
+    static var previews: some View {
+        FlightListView(keyword: .constant(""), viewState: .constant(.search))
+    }
+}
+
+
+
+
+extension View {
     func hilightedText(text: String, target: String) -> Text {
         guard !text.isEmpty && !target.isEmpty else { return Text(text) }
         
@@ -138,11 +151,3 @@ struct FlightListView: View {
         return result ?? Text(text)
     }
 }
-
-struct FlightListView_Preview: PreviewProvider {
-    static var previews: some View {
-        FlightListView(keyword: .constant(""), viewState: .constant(.search))
-    }
-}
-
-

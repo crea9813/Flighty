@@ -46,8 +46,8 @@ final class FlightSearchViewModel: ObservableObject {
                     print("\(error.code): \(error.message)")
                     self.results = []
                 }
-            } receiveValue: { items in
-                print(items)
+            } receiveValue: { [unowned self] items in
+                self.isLoading = false
                 self.results = items
             }.store(in: &bag)
     }

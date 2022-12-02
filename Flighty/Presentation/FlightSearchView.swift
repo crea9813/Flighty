@@ -13,24 +13,35 @@ struct FlightSearchView: View {
     
     
     var body: some View {
-        SearchBar(keyword: $viewModel.query)
+        SearchBar(keyword: $viewModel.query).padding(.horizontal)
         List {
             if viewModel.query.isEmpty {
-                Text("검색 전")
+                hilightedText(text: "검색 창을 이용해보세요\n 아니면 아무거나 쫓아가볼까요!", target: "아무거나 쫓아가볼까요!")
+                    .foregroundColor(Color(UIColor.systemGray))
+                    .font(.footnote)
+                    .fontWeight(.light)
+                    .lineSpacing(3)
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .padding(.top, 44)
+                    .listRowBackground(Color("SystemBackground"))
             } else {
                 if viewModel.isLoading {
-                    Text("로딩 중")
+                    ListLoadingView()
+                } else if viewModel.results.isEmpty {
+                    Text("\(viewModel.query)와 관련된\n검색 결과가 없습니다.")
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(Color(UIColor.label))
+                        .listRowBackground(Color("SystemBackground"))
                 } else {
-                    if viewModel.results.isEmpty {
-                        Text("없음")
-                    } else {
-                        ForEach(viewModel.results, id: \.id) { airportAndAirline in
-                            AirportAndAirlineCell(airportAndAirline: airportAndAirline)
-                        }
-                    }
+                    ForEach(viewModel.results, id: \.id) { airportAndAirline in
+                        AirportAndAirlineCell(airportAndAirline: airportAndAirline)
+                            .listRowInsets(.init())
+                    }.listRowBackground(Color("SystemBackground"))
                 }
             }
         }
+        .listStyle(.plain)
     }
 }
 

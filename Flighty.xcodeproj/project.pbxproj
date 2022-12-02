@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2F0D80EE292F54DB00EF537B /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 2F0D80ED292F54DB00EF537B /* CombineMoya */; };
 		2F0D80F029344D9E00EF537B /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0D80EF29344D9E00EF537B /* MainViewModel.swift */; };
+		2F155B2429398E4D008CE0F9 /* ListLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F155B2329398E4D008CE0F9 /* ListLoadingView.swift */; };
 		2F2B9A2F29262AC000C1C4C2 /* FlightyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B9A2E29262AC000C1C4C2 /* FlightyApp.swift */; };
 		2F2B9A3129262AC000C1C4C2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B9A3029262AC000C1C4C2 /* ContentView.swift */; };
 		2F2B9A3329262AC200C1C4C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F2B9A3229262AC200C1C4C2 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		2F0D80EF29344D9E00EF537B /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		2F155B2329398E4D008CE0F9 /* ListLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLoadingView.swift; sourceTree = "<group>"; };
 		2F2B9A2B29262AC000C1C4C2 /* Flighty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flighty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F2B9A2E29262AC000C1C4C2 /* FlightyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightyApp.swift; sourceTree = "<group>"; };
 		2F2B9A3029262AC000C1C4C2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				2F2B9A3F29262AF100C1C4C2 /* SearchBar.swift */,
 				2F2B9A4029262AF100C1C4C2 /* CircleIconView.swift */,
 				2F2B9A4129262AF100C1C4C2 /* FlightListView.swift */,
+				2F155B2329398E4D008CE0F9 /* ListLoadingView.swift */,
 				2F6F6E292936E01C00013745 /* FlightSearchView.swift */,
 				2F6F6E332936F11900013745 /* FlightSearchViewModel.swift */,
 				2F6F6E252935FCEF00013745 /* AirportAndAirlineCell.swift */,
@@ -299,6 +302,7 @@
 				2F2B9A5F29262AF200C1C4C2 /* Constant.swift in Sources */,
 				2F2B9A5729262AF200C1C4C2 /* FlightRepositoryInterface.swift in Sources */,
 				2F6F6E1E29359D9200013745 /* UserCollection.swift in Sources */,
+				2F155B2429398E4D008CE0F9 /* ListLoadingView.swift in Sources */,
 				2F6F6E302936E7E200013745 /* Country.swift in Sources */,
 				2F2B9A5E29262AF200C1C4C2 /* API.swift in Sources */,
 				2F6F6E342936F11900013745 /* FlightSearchViewModel.swift in Sources */,

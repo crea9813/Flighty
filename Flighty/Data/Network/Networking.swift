@@ -35,7 +35,7 @@ final class Networking<Target: TargetType>: MoyaProvider<Target> {
                 receiveOutput: { output in
                     print("SUCCESS: \(requestString)")
                 },
-                receiveRequest: {_ in
+                receiveRequest: { _ in
                      print("REQUEST: \(requestString)")
                  }
             ).eraseToAnyPublisher()
