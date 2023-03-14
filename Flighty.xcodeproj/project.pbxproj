@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F0D80EE292F54DB00EF537B /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 2F0D80ED292F54DB00EF537B /* CombineMoya */; };
 		2F0D80F029344D9E00EF537B /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0D80EF29344D9E00EF537B /* MainViewModel.swift */; };
 		2F155B2429398E4D008CE0F9 /* ListLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F155B2329398E4D008CE0F9 /* ListLoadingView.swift */; };
 		2F2B9A2F29262AC000C1C4C2 /* FlightyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B9A2E29262AC000C1C4C2 /* FlightyApp.swift */; };
@@ -39,6 +38,9 @@
 		2F6F6E302936E7E200013745 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F6E2F2936E7E200013745 /* Country.swift */; };
 		2F6F6E322936EBFC00013745 /* MockedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F6E312936EBFC00013745 /* MockedData.swift */; };
 		2F6F6E342936F11900013745 /* FlightSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F6E332936F11900013745 /* FlightSearchViewModel.swift */; };
+		8807515E29BB163C00B89E79 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 8807515D29BB163C00B89E79 /* CombineMoya */; };
+		8807516029BB163C00B89E79 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 8807515F29BB163C00B89E79 /* Moya */; };
+		8807516229BB1B5200B89E79 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807516129BB1B5200B89E79 /* UIApplication+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,7 @@
 		2F6F6E2F2936E7E200013745 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		2F6F6E312936EBFC00013745 /* MockedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedData.swift; sourceTree = "<group>"; };
 		2F6F6E332936F11900013745 /* FlightSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchViewModel.swift; sourceTree = "<group>"; };
+		8807516129BB1B5200B89E79 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,8 +84,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F0D80EE292F54DB00EF537B /* CombineMoya in Frameworks */,
+				8807515E29BB163C00B89E79 /* CombineMoya in Frameworks */,
 				2F2B9A6A29262BE500C1C4C2 /* Drawer in Frameworks */,
+				8807516029BB163C00B89E79 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +215,7 @@
 				2F2B9A7029262C3400C1C4C2 /* AnyDecodable.swift */,
 				2F6F6E1D29359D9200013745 /* UserCollection.swift */,
 				2F6F6E2F2936E7E200013745 /* Country.swift */,
+				8807516129BB1B5200B89E79 /* UIApplication+Extension.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -233,7 +238,8 @@
 			name = Flighty;
 			packageProductDependencies = (
 				2F2B9A6929262BE500C1C4C2 /* Drawer */,
-				2F0D80ED292F54DB00EF537B /* CombineMoya */,
+				8807515D29BB163C00B89E79 /* CombineMoya */,
+				8807515F29BB163C00B89E79 /* Moya */,
 			);
 			productName = Flighty;
 			productReference = 2F2B9A2B29262AC000C1C4C2 /* Flighty.app */;
@@ -265,7 +271,7 @@
 			mainGroup = 2F2B9A2229262AC000C1C4C2;
 			packageReferences = (
 				2F2B9A6829262BE500C1C4C2 /* XCRemoteSwiftPackageReference "swiftui-drawer" */,
-				2F0D80EC292F54DB00EF537B /* XCRemoteSwiftPackageReference "Moya" */,
+				8807515C29BB163C00B89E79 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 2F2B9A2C29262AC000C1C4C2 /* Products */;
 			projectDirPath = "";
@@ -320,6 +326,7 @@
 				2F2B9A5929262AF200C1C4C2 /* Schedule.swift in Sources */,
 				2F2B9A2F29262AC000C1C4C2 /* FlightyApp.swift in Sources */,
 				2F2B9A5D29262AF200C1C4C2 /* Networking.swift in Sources */,
+				8807516229BB1B5200B89E79 /* UIApplication+Extension.swift in Sources */,
 				2F0D80F029344D9E00EF537B /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,6 +384,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -429,6 +438,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -468,7 +479,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.minestrone.Flighty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -507,7 +520,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.minestrone.Flighty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -538,14 +553,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2F0D80EC292F54DB00EF537B /* XCRemoteSwiftPackageReference "Moya" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Moya/Moya";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		2F2B9A6829262BE500C1C4C2 /* XCRemoteSwiftPackageReference "swiftui-drawer" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/maustinstar/swiftui-drawer";
@@ -554,18 +561,31 @@
 				kind = branch;
 			};
 		};
+		8807515C29BB163C00B89E79 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2F0D80ED292F54DB00EF537B /* CombineMoya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2F0D80EC292F54DB00EF537B /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = CombineMoya;
-		};
 		2F2B9A6929262BE500C1C4C2 /* Drawer */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2F2B9A6829262BE500C1C4C2 /* XCRemoteSwiftPackageReference "swiftui-drawer" */;
 			productName = Drawer;
+		};
+		8807515D29BB163C00B89E79 /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8807515C29BB163C00B89E79 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		8807515F29BB163C00B89E79 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8807515C29BB163C00B89E79 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

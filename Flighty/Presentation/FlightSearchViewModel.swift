@@ -31,12 +31,12 @@ final class FlightSearchViewModel: ObservableObject {
                     self?.isLoading = true
                 }
             })
-            .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)
+            .debounce(for: .milliseconds(300), scheduler: DispatchQueue.global())
             .removeDuplicates()
             .filter { !$0.isEmpty }
             .map { [unowned self] in return self.useCase.search($0) }
             .switchToLatest()
-            .receive(on: DispatchQueue.main)
+            .receive(on: DispatchQueue.global())
             .eraseToAnyPublisher()
             .sink { completion in
                 switch completion {
@@ -47,8 +47,11 @@ final class FlightSearchViewModel: ObservableObject {
                     self.results = []
                 }
             } receiveValue: { [unowned self] items in
-                self.isLoading = false
-                self.results = items
+                DispatchQueue.main.async {
+                    self.isLoading = false
+                    self.results = items
+                }
             }.store(in: &bag)
     }
+    
 }

@@ -36,12 +36,12 @@ final class FlightUseCase: FlightUseCaseProtocol {
                 return airports.map { AirportAndAirline(iataCode: $0.iataCode ?? "", icaoCode: $0.icaoCode ?? "", name: $0.name) }
             }
             
-        let airlines = repository.getAirlines()
-            .map { airlines -> [AirportAndAirline] in
-                return airlines.map { AirportAndAirline(iataCode: $0.iataCode ?? "", icaoCode: $0.icaoCode ?? "", name: $0.name) }
-            }
+//        let airlines = repository.getAirlines()
+//            .map { airlines -> [AirportAndAirline] in
+//                return airlines.map { AirportAndAirline(iataCode: $0.iataCode ?? "", icaoCode: $0.icaoCode ?? "", name: $0.name) }
+//            }
             
-        return airports.merge(with: airlines).eraseToAnyPublisher()
+        return airports.eraseToAnyPublisher()
     }
 
 }
