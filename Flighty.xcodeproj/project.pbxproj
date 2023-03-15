@@ -41,6 +41,8 @@
 		8807515E29BB163C00B89E79 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 8807515D29BB163C00B89E79 /* CombineMoya */; };
 		8807516029BB163C00B89E79 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 8807515F29BB163C00B89E79 /* Moya */; };
 		8807516229BB1B5200B89E79 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807516129BB1B5200B89E79 /* UIApplication+Extension.swift */; };
+		8807518B29C19A6000B89E79 /* SchedulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807518A29C19A6000B89E79 /* SchedulesView.swift */; };
+		8807518D29C1BA5700B89E79 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807518C29C1BA5700B89E79 /* SettingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +79,8 @@
 		2F6F6E312936EBFC00013745 /* MockedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedData.swift; sourceTree = "<group>"; };
 		2F6F6E332936F11900013745 /* FlightSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchViewModel.swift; sourceTree = "<group>"; };
 		8807516129BB1B5200B89E79 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		8807518A29C19A6000B89E79 /* SchedulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulesView.swift; sourceTree = "<group>"; };
+		8807518C29C1BA5700B89E79 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,12 +143,14 @@
 				2F2B9A3F29262AF100C1C4C2 /* SearchBar.swift */,
 				2F2B9A4029262AF100C1C4C2 /* CircleIconView.swift */,
 				2F2B9A4129262AF100C1C4C2 /* FlightListView.swift */,
+				8807518C29C1BA5700B89E79 /* SettingView.swift */,
 				2F155B2329398E4D008CE0F9 /* ListLoadingView.swift */,
 				2F6F6E292936E01C00013745 /* FlightSearchView.swift */,
 				2F6F6E332936F11900013745 /* FlightSearchViewModel.swift */,
 				2F6F6E252935FCEF00013745 /* AirportAndAirlineCell.swift */,
 				2F2B9A4229262AF100C1C4C2 /* MainView.swift */,
 				2F0D80EF29344D9E00EF537B /* MainViewModel.swift */,
+				8807518A29C19A6000B89E79 /* SchedulesView.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -303,6 +309,7 @@
 				2F6F6E262935FCEF00013745 /* AirportAndAirlineCell.swift in Sources */,
 				2F2B9A5429262AF200C1C4C2 /* CircleIconView.swift in Sources */,
 				2F2B9A5A29262AF200C1C4C2 /* BaseModel.swift in Sources */,
+				8807518D29C1BA5700B89E79 /* SettingView.swift in Sources */,
 				2F6F6E322936EBFC00013745 /* MockedData.swift in Sources */,
 				2F6F6E2A2936E01C00013745 /* FlightSearchView.swift in Sources */,
 				2F2B9A5F29262AF200C1C4C2 /* Constant.swift in Sources */,
@@ -310,6 +317,7 @@
 				2F6F6E1E29359D9200013745 /* UserCollection.swift in Sources */,
 				2F155B2429398E4D008CE0F9 /* ListLoadingView.swift in Sources */,
 				2F6F6E302936E7E200013745 /* Country.swift in Sources */,
+				8807518B29C19A6000B89E79 /* SchedulesView.swift in Sources */,
 				2F2B9A5E29262AF200C1C4C2 /* API.swift in Sources */,
 				2F6F6E342936F11900013745 /* FlightSearchViewModel.swift in Sources */,
 				2F6F6E2E2936E1AF00013745 /* Airport.swift in Sources */,
@@ -384,7 +392,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -438,7 +446,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -471,7 +479,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
@@ -512,7 +520,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.3;

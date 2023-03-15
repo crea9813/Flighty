@@ -9,10 +9,9 @@ import Foundation
 import Combine
 import SwiftUI
 
-enum FlightViewState {
+enum ScheduleMenu {
     case my
     case others
-    case search
 }
 
 final class MainViewModel: ObservableObject {
@@ -20,7 +19,7 @@ final class MainViewModel: ObservableObject {
     @Published public var searchText = ""
     @Published public var isMyFlight = false
     @Published public var isLoading = false
-    @Published public var viewState: FlightViewState = .search
+    @Published public var viewState: ScheduleMenu = .my
     
     @Published public var flights: Flights = []
     

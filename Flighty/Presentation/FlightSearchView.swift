@@ -8,25 +8,46 @@
 import SwiftUI
 
 struct FlightSearchView: View {
+    
     @StateObject private var viewModel = FlightSearchViewModel(FlightUseCase(repository: FlightRepository(service: Networking<API>())))
+    @Binding var isSearching: Bool
     
     var body: some View {
-        SearchBar(keyword: $viewModel.query).padding(.horizontal)
-        if viewModel.query.isEmpty {
-           notRequestedView
-        } else {
-            if viewModel.isLoading {
-                ListLoadingView()
+        VStack{
+            HStack {
+                Text("검색")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.leading)
+                    .foregroundColor(Color(UIColor.label))
+                Spacer()
+                Button(action: { isSearching = false }) {
+                    Image(systemName: "multiply")
+                        .font(Font.headline.weight(.bold))
+                        .foregroundColor(.primary)
+                }.frame(width: 28, height: 28)
+            }.padding()
+            
+            SearchBar(keyword: $viewModel.query, isSearching: .constant(false))
+                .padding(.horizontal)
+            
+            if viewModel.query.isEmpty {
+                notRequestedView
             } else {
-                loadedView(viewModel.results)
+                if viewModel.isLoading {
+                    ListLoadingView()
+                } else {
+                    loadedView(viewModel.results)
+                }
             }
+            Spacer()
         }
     }
 }
 
 private extension FlightSearchView {
     var notRequestedView: some View {
-        Text("검색 창을 이용해보세요")
+        Text("검색 창을 이용해 보세요")
             .foregroundColor(Color(UIColor.systemGray))
             .font(.footnote)
             .fontWeight(.light)
@@ -62,6 +83,6 @@ private extension FlightSearchView {
 
 struct FlightSearchView_Previews: PreviewProvider {
     static var previews: some View {
-        FlightSearchView()
+        FlightSearchView(isSearching: .constant(false))
     }
 }

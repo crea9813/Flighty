@@ -10,6 +10,7 @@ import SwiftUI
 struct SearchBar: View {
     
     @Binding var keyword: String
+    @Binding var isSearching: Bool
     
     var body: some View {
         ZStack {
@@ -17,6 +18,9 @@ struct SearchBar: View {
             HStack {
                 Image(systemName: "magnifyingglass")
                 TextField("검색", text: $keyword)
+                    .onTapGesture {
+                        isSearching = true
+                    }
                     .foregroundColor(.primary)
             }
             .foregroundColor(Color("SystemGray"))
@@ -29,6 +33,6 @@ struct SearchBar: View {
 
 struct SearchBar_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBar(keyword: .constant("아이"))
+        SearchBar(keyword: .constant("아이"), isSearching: .constant(false))
     }
 }

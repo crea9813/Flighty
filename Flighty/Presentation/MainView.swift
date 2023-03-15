@@ -20,8 +20,7 @@ struct MainView: View {
         ZStack {
             MapView(region: region, mapType: mapType).ignoresSafeArea(.all)
             
-            FlightListView(keyword: $viewModel.searchText,
-                           viewState: $viewModel.viewState)
+            FlightListView(keyword: $viewModel.searchText)
         }
     }
 }

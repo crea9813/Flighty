@@ -33,10 +33,10 @@ struct AirportAndAirlineCell: View {
                     
                 }
             }
-            .padding(.vertical, 8)
+            .padding(.vertical)
         }
         .padding()
-        .frame(maxWidth: .infinity, maxHeight: 50, alignment: .leading)
+        .frame(maxWidth: .infinity, maxHeight: 60, alignment: .leading)
         .background(Color("SystemBackground"))
     }
 }

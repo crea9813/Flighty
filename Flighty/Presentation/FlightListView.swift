@@ -11,149 +11,35 @@ import Drawer
 struct FlightListView: View {
     
     @Binding var keyword: String
-    @Binding var viewState: FlightViewState
-    
+    @State private var isSearching = false
+    @State private var isSettingPresented = false
+
     var body: some View {
-        
-        Drawer {
-            ZStack {
-                RoundedRectangle(cornerRadius: 12)
-                    .foregroundColor(Color("SystemBackground"))
-                
-                VStack {
-                    HStack {
-                        switch viewState {
-                        case .my:
-                            Text("나의 여행")
-                                .font(.title)
-                                .fontWeight(.bold)
-                                .multilineTextAlignment(.leading)
-                                .foregroundColor(Color(UIColor.label))
-                            Menu {
-                                Button(action: {
-                                    self.viewState = .my
-                                }) {
-                                    Label("나의 여행", systemImage: "person.crop.circle")
-                                }
-                                Button(action: {
-                                    self.viewState = .others
-                                }) {
-                                    Label("다른 사람들의 여행", systemImage: "person.2")
-                                }
-                            } label: {
-                                CircleIconView(name: "chevron.down")
-                            }.frame(width: 24, height: 24)
-                            
-                            Spacer()
-                            
-                            Button(action: { }) {
-                                CircleIconView(name: "gearshape")
-                            }.frame(width: 28, height: 28)
-                        case .others:
-                            Text("다른 사람의 여행")
-                                .font(.title)
-                                .fontWeight(.bold)
-                                .multilineTextAlignment(.leading)
-                                .foregroundColor(Color(UIColor.label))
-                            Menu {
-                                Button(action: {
-                                    self.viewState = .my
-                                }) {
-                                    Label("나의 여행", systemImage: "person.crop.circle")
-                                }
-                                Button(action: {
-                                    self.viewState = .others
-                                }) {
-                                    Label("다른 사람들의 여행", systemImage: "person.2")
-                                }
-                            } label: {
-                                CircleIconView(name: "chevron.down")
-                            }.frame(width: 24, height: 24)
-                            
-                            Spacer()
-                            
-                            Button(action: { }) {
-                                CircleIconView(name: "gearshape")
-                            }.frame(width: 28, height: 28)
-                        case .search:
-                            Text("검색")
-                                .font(.title)
-                                .fontWeight(.bold)
-                                .multilineTextAlignment(.leading)
-                                .foregroundColor(Color(UIColor.label))
-                            Spacer()
-                            Button(action: {
-                                self.viewState = .my
-                            }) {
-                                Image(systemName: "multiply")
-                                    .font(Font.headline.weight(.bold))
-                                    .foregroundColor(.primary)
-                            }.frame(width: 28, height: 28)
-                        }
-                    }.padding()
-                    
-                    if viewState != .search {
-                        SearchBar(keyword: $keyword).padding(.horizontal)
-                        VStack {
-                            switch viewState {
-                            case .my:
-                                Text("어디로든 떠나봐요")
-                                    .fontWeight(.semibold)
-                                    .font(.title3)
-                                    .padding(.bottom, 2.0)
-                                Button(action: {
-                                    self.viewState = .search
-                                }) {
-                                    hilightedText(text: "검색 창을 이용해보세요\n 아니면 아무거나 쫓아가볼까요!", target: "아무거나 쫓아가볼까요!")
-                                        .foregroundColor(Color(UIColor.systemGray))
-                                        .font(.footnote)
-                                        .fontWeight(.light)
-                                        .lineSpacing(3)
-                                        .multilineTextAlignment(.center)
-                                }
-                            case .others:
-                                Text("다른 사람의 여행을 추가해봐요")
-                                    .fontWeight(.semibold)
-                                    .font(.title3)
-                                    .padding(.bottom, 2.0)
-                                
-                                Button(action: {
-                                    self.viewState = .search
-                                }) {
-                                    Text("친구나 사랑하는 사람, 중요한 사람에게\n 제때 도착할 수 있게 계속 쫓아가 볼까요!")
-                                        .foregroundColor(Color(UIColor.systemGray))
-                                        .font(.footnote)
-                                        .fontWeight(.light)
-                                        .lineSpacing(3)
-                                        .multilineTextAlignment(.center)
-                                }
-                            case .search:
-                                Text("")
-                            }
-                        }
-                        .padding()
+        NavigationView{
+            Drawer {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 12)
+                        .foregroundColor(Color("SystemBackground"))
+                    if isSearching {
+                        FlightSearchView(isSearching: $isSearching)
                     } else {
-                        FlightSearchView()
+                        SchedulesView(isSearching: $isSearching, isSettingPresented: $isSettingPresented)
                     }
-                    Spacer()
                 }
             }
-        }
-        .rest(at: .constant([250, 500, 750]))
-        .impact(.medium)
-        .edgesIgnoringSafeArea(.vertical)
-        .onAppear { UIApplication.shared.hideKeyboard() }   
+            .rest(at: .constant(isSearching ? [750] : [250, 500, 750]))
+            .impact(.medium)
+            .edgesIgnoringSafeArea(.vertical)
+            .onAppear { UIApplication.shared.hideKeyboard() }
+        }.sheet(isPresented: $isSettingPresented, content: { SettingView() })
     }
 }
 
 struct FlightListView_Preview: PreviewProvider {
     static var previews: some View {
-        FlightListView(keyword: .constant(""), viewState: .constant(.my))
+        FlightListView(keyword: .constant(""))
     }
 }
-
-
-
 
 extension View {
     func hilightedText(text: String, target: String) -> Text {
